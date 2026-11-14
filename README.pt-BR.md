@@ -8,7 +8,7 @@ Nasceu como companheiro do tema [Ardentia](https://github.com/jotafurtado/ardent
 
 | Tabela na coluna de leitura | A mesma tabela, expandida |
 | --- | --- |
-| ![Tabela larga cortada pela coluna de leitura, com rolagem horizontal](screenshots/table-contracted.png) | ![A mesma tabela expandida até a largura do painel](screenshots/table-expanded.png) |
+| ![Tabela larga cortada pela coluna de leitura, com rolagem horizontal](screenshots/table-contracted.pt-BR.png) | ![A mesma tabela expandida até a largura do painel](screenshots/table-expanded.pt-BR.png) |
 
 ## O que faz
 
