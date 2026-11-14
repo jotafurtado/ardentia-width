@@ -1,0 +1,89 @@
+/* Ardentia Largura
+   Nota inteira ou uma tabela na largura do painel. Usa as variáveis do tema Ardentia
+   quando ele está ativo e cai nas do Obsidian em qualquer outro tema. */
+
+/* ---------------------------------------------------------------- nota */
+
+/* A coluna de leitura passa a ocupar o painel. Vale para leitura e edição. */
+.view-content.ardentia-wide-note {
+  --file-line-width: 100%;
+}
+
+.view-content.ardentia-wide-note .markdown-source-view.mod-cm6.is-readable-line-width :is(.cm-sizer, .cm-content, .cm-line) {
+  max-width: 100%;
+}
+
+.view-action.ardentia-note-toggle.is-active {
+  color: var(--ardentia-acento, var(--text-accent));
+}
+
+/* ------------------------------------------------------------- tabelas */
+
+/* Botão acima da tabela, à direita, logo antes de ela começar */
+.ardentia-table-bar {
+  position: sticky;
+  inset-inline-start: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: 22px;
+  margin: 0 0 2px;
+  user-select: none;
+}
+
+.ardentia-table-toggle.clickable-icon {
+  --icon-size: 14px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  color: var(--ardentia-tenue, var(--text-faint));
+  opacity: 0.75;
+}
+
+.ardentia-table-toggle.clickable-icon:hover,
+.ardentia-wide-table > .ardentia-table-bar > .ardentia-table-toggle.clickable-icon {
+  color: var(--ardentia-acento, var(--text-accent));
+  opacity: 1;
+}
+
+.markdown-rendered .ardentia-table-bar + table,
+.ardentia-table-bar + .table-wrapper > table {
+  margin-block-start: 0;
+}
+
+/* O painel só vira referência de largura quando há tabela expandida nele */
+.markdown-preview-view:has(.ardentia-wide-table),
+.markdown-source-view.mod-cm6 .cm-scroller:has(.ardentia-wide-table) {
+  container-type: inline-size;
+}
+
+/* Leitura: o bloco sai da coluna e ocupa o painel, centrado nela */
+.markdown-preview-sizer > .ardentia-wide-table {
+  box-sizing: border-box;
+  width: 100cqi;
+  max-width: none;
+  margin-inline-start: calc((100% - 100cqi) / 2);
+}
+
+.markdown-preview-sizer > .ardentia-wide-table > table {
+  width: 100%;
+}
+
+/* Edição: o widget nativo já sangra 16 px de cada lado para as alças da tabela */
+.markdown-source-view.mod-cm6 .cm-content > .cm-table-widget.ardentia-wide-table {
+  box-sizing: border-box;
+  width: calc(100cqi + 32px);
+  max-width: none;
+  /* O nativo fixa a margem com !important */
+  margin-inline: calc((100% - 100cqi) / 2 - 16px) 0 !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget.ardentia-wide-table > .table-wrapper,
+.markdown-source-view.mod-cm6 .cm-table-widget.ardentia-wide-table > .table-wrapper > table {
+  width: 100%;
+}
+
+@media print {
+  .ardentia-table-bar {
+    display: none;
+  }
+}

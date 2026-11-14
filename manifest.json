@@ -1,0 +1,10 @@
+{
+  "id": "ardentia-width",
+  "name": "Ardentia Largura",
+  "version": "1.0.0",
+  "minAppVersion": "1.8.7",
+  "description": "Expand the whole note or a single table to the full width of the pane, with a button in the note header and one above each table.",
+  "author": "João Furtado",
+  "authorUrl": "https://github.com/jotafurtado",
+  "isDesktopOnly": false
+}
