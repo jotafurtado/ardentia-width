@@ -50,7 +50,13 @@ npm run build    # checa os tipos e gera o build de release
 npm run lint     # as regras usadas na revisão do diretório da comunidade
 ```
 
-Para testar em um cofre, crie um link ou copie a pasta para `<cofre>/.obsidian/plugins/ardentia-width/`.
+Para testar a cópia de trabalho em um cofre, ao lado do plugin publicado:
+
+```bash
+npm run install:dev -- "/caminho/do/cofre"
+```
+
+Ele compila e instala o plugin como Ardentia Largura (Dev), com o id `ardentia-width-dev`. Deixe só uma das duas versões ativa, senão cada botão aparece em dobro. Cada uma guarda o próprio estado.
 
 Uma tag no formato `x.y.z`, igual à `version` do `manifest.json`, dispara o workflow de release, que compila o plugin e anexa `main.js`, `manifest.json` e `styles.css` a um release do GitHub.
 

@@ -50,7 +50,13 @@ npm run build    # type-checks and builds for release
 npm run lint     # the rules used by the community directory review
 ```
 
-To try it in a vault, link or copy the folder to `<vault>/.obsidian/plugins/ardentia-width/`.
+To try the working copy in a vault next to the published plugin:
+
+```bash
+npm run install:dev -- "/path/to/your/vault"
+```
+
+It builds and installs the plugin as Ardentia Largura (Dev), with the id `ardentia-width-dev`. Keep only one of the two enabled, or every button shows up twice. Each one keeps its own saved state.
 
 A tag in the form `x.y.z` that matches `version` in `manifest.json` triggers the release workflow, which builds the plugin and attaches `main.js`, `manifest.json` and `styles.css` to a GitHub release.
 
